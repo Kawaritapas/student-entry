@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<body style="background-color: rgb(53, 163, 163);">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <div class="ui inverted segment" style="margin-top:-5px">
+        <div class="ui inverted secondary menu">
+          <a href="/" class="active item">
+            Home
+          </a>
+          <a href="/students_list"  class="item">
+            students list
+          </a>
+         <div class="ui action input" style="height: 30px;margin-top:7px;">
+            <form  action="/students_list" method="GET">
+            <input  style="padding-top: 5px;padding-bottom: 5px;border-top: aqua;border:aqua; "  type="text" placeholder="Search students..." name="search">
+            <button  style="z-index:1;padding:7px; border-radius: 0%;" class="ui primary button" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <h1 style="color: white;text-align: center;">Students list</h1>
+<%student.map(function(student){%>
+   <div class="ui main text container segment" style="background-color: white;">
+    <div class="ui middle aligned divided list">
+        <div class="item">
+          <div class="right floated content">
+            <a href="/student/<%=student.id%>" class="ui primary button" style="margin-top: 26px;">Know more</a>
+          </div>
+          <img class="ui small rounded image" src="<%= student.photo %> ">
+          <div class="content" style="font-weight: bolder;">
+           <%= student.name %> 
+          </div>
+          <br>
+          <br>
+          <div class="content">
+          <span style="color: blue;">E-mail:</span> <%= student.email%>
+          </div>
+          <div class="content">
+         <span style="color: blue;">Phone: </span>   <%= student.phone%>
+          </div>
+          <div class="content">
+         <span style="color: blue;">Degree:</span>   <%= student.degree%>
+          </div>
+        </div>
+      </div>
+   </div>
+
+<%})%>
+</body>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,30 @@
+<%- include("partials/header")%>
+<body style="background-image: linear-gradient(green,black);">
+  <h1 style="text-align: center;color: white;">Fill student information</h1>
+  <div class="ui main text container segment" style="background-color: black;width: 400px;">
+<form class="ui black form" action="/students_list" method="POST">
+  <div class="field">
+    <label style="color: white;">Full name <span style="color:red">*</span></label>
+    <input type="text" name="name" placeholder="First Name" required>
+  </div>
+  <div class="field">
+    <label style="color: white;">E-mail <span style="color:red">*</span></label>
+    <input type="email" name="email" placeholder="Last Name" required>
+  </div>
+  <div class="field">
+    <label style="color: white;">Phone <span style="color:red">*</span></label>
+    <input type="number" name="phone" placeholder="Last Name" required>
+  </div>
+  <div class="field">
+    <label style="color: white;">Photo-url <span style="color:red">*</span></label>
+    <input type="text" name="photo" placeholder="Last Name" required>
+  </div>
+  <div class="field">
+    <label style="color: white;">Degree <span style="color:red">*</span></label>
+    <input type="text" name="degree" placeholder="Last Name" required>
+  </div>
+  <button class="ui primary button" type="submit">Submit</button>
+</form>
+</div>
+</body>
+<%- include("partials/footer") %>

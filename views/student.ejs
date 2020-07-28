@@ -1,0 +1,17 @@
+<%- include("partials/header")%>
+<body style="background-image: linear-gradient(purple,black);">
+<div class="ui container"> 
+  <img class="ui image" src="<%=student.photo%>" style="margin: auto; height: 300px;">
+  <div class="ui inverted segment" >
+   <h3 style="color: white;"><span>Name:</span> <%= student.name %></h3> 
+   <h3><span>E-mail:</span> <%= student.email%></h3>
+   <h3><span>Phone:</span> <%=student.phone%></h3>
+   <h3><span>Degree:</span> <%=student.degree %> </h3>
+   <a href="/student/edit/<%=student.id%>">
+    <button class="ui red button">Edit</button>
+    </a>
+  </div>
+</div>
+</body>
+
+<%- include("partials/footer") %>
